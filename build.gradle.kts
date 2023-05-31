@@ -1,3 +1,4 @@
+import org.jetbrains.compose.ComposeBuildConfig.composeVersion
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
@@ -6,7 +7,7 @@ plugins {
 }
 
 group = "de.rstdev"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 
 repositories {
     google()
@@ -23,6 +24,9 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
+                implementation("org.jetbrains.compose.material3:material3-desktop:1.2.1")
+                implementation("org.jetbrains.compose.material:material-icons-core-desktop:${composeVersion}")
+                implementation("org.jetbrains.compose.material:material-icons-extended-desktop:${composeVersion}")
             }
         }
         val jvmTest by getting
